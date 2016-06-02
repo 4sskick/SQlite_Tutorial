@@ -91,44 +91,6 @@ public class Database extends SQLiteOpenHelper {
         return personArrayList;
     }
 
-    public ArrayList<String> getAllName() {
-        ArrayList<String> personArrayList = new ArrayList<>();
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
-        cursor.moveToFirst();
-
-        while (cursor.isAfterLast() == false) {
-            Person person = new Person();
-            person.setId(cursor.getInt(0));//this gonna get value of ID table column
-            person.setName(cursor.getString(1));//this gonna get value of NAME table column
-            person.setAddress(cursor.getString(2));//ADDRESS table column
-
-            //add into arrayList
-            personArrayList.add(cursor.getString(1));
-            cursor.moveToNext();
-        }
-        return personArrayList;
-    }
-
-    public ArrayList<Person> getAllName1() {
-        ArrayList<Person> personArrayList = new ArrayList<>();
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("select * from " + TABLE_NAME, null);
-        cursor.moveToFirst();
-
-        while (cursor.isAfterLast() == false) {
-            Person person = new Person();
-            person.setId(cursor.getInt(0));//this gonna get value of ID table column
-            person.setName(cursor.getString(1));//this gonna get value of NAME table column
-            person.setAddress(cursor.getString(2));//ADDRESS table column
-
-            //add into arrayList
-            personArrayList.add(person);
-            cursor.moveToNext();
-        }
-        return personArrayList;
-    }
-
     public Person getPersonById(int id) {
         Person person = new Person();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();

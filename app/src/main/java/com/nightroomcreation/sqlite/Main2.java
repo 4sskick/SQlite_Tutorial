@@ -10,7 +10,7 @@ import java.util.Collections;
 public class Main2 extends AppCompatActivity {
 
     private ArrayList<String> stringArrayList = new ArrayList<>();
-    private String[] namePeople = new String[]{"Doni", "Dita", "Dona"};
+    private String[] namePeople = new String[]{"Doni", "Dita", "Dona", "Dito", "Anyes"};
 
     private ListView listView;
     private DetailAdapter detailAdapter;
@@ -21,7 +21,7 @@ public class Main2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         listView = (ListView) findViewById(R.id.list_sample);
-        detailAdapter = new DetailAdapter(this, android.R.layout.simple_list_item_1, stringArrayList);
+//        detailAdapter = new DetailAdapter(this, android.R.layout.simple_list_item_1, stringArrayList);
 
 //        for (int i = 0; i < namePeople.length; i++) {
 //            stringArrayList.add(namePeople[i]);
